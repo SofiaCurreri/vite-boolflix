@@ -14,16 +14,16 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <div class="row row-cols-4">
+  <div class="container mt-5">
+    <div class="row row-cols-3">
       <MovieCard
-        v-for="title in store.titles"
-        :key="title.id"
-        :pic="title.poster_path"
-        :title="title.title"
-        :originalTitle="title.original_title"
-        :language="title.original_language"
-        :vote="title.vote_average"
+        v-for="movie in store.movieList"
+        :key="movie.id"
+        :pic="movie.poster_path"
+        :title="movie.title"
+        :originalTitle="movie.original_title"
+        :language="movie.original_language"
+        :vote="movie.vote_average"
       />
     </div>
   </div>

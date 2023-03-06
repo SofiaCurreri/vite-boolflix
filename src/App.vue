@@ -16,13 +16,12 @@ export default {
   methods: {
     fetchTitles(term) {
       axios.get(store.endpoint + "&query=" + term).then((response) => {
-        store.titles = response.data.results;
-        console.log(store.titles);
+        store.movieList = response.data.results;
+        console.log(store.movieList);
       });
     },
 
     fetchFilteredTitles(term) {
-      console.log(term);
       this.fetchTitles(term);
     },
   },

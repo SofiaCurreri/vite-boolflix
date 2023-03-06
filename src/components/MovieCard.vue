@@ -13,9 +13,9 @@ export default {
 <template>
   <div class="col text-center">
     <img :src="pic" class="img-fluid" alt="title pic" />
-    <h3>{{ title }}</h3>
+    <h3 class="mt-3">{{ title }}</h3>
     <h4>{{ originalTitle }}</h4>
-    <p>{{ language }}</p>
+    <p class="mt-3">{{ language }}</p>
     <p>{{ vote }}</p>
   </div>
 </template>

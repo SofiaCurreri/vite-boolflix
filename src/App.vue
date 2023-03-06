@@ -14,15 +14,16 @@ export default {
   components: { AppHeader, CardList },
 
   methods: {
-    fetchTitles() {
-      axios.get(store.endpoint).then((response) => {
+    fetchTitles(term) {
+      axios.get(store.endpoint + "&query=" + term).then((response) => {
         store.titles = response.data.results;
         console.log(store.titles);
       });
     },
 
     fetchFilteredTitles(term) {
-      this.fetchTitles(`${store.endpoint}&query=${term}`);
+      console.log(term);
+      this.fetchTitles(term);
     },
   },
 };

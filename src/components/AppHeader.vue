@@ -11,7 +11,8 @@ export default {
 
   methods: {
     search() {
-      this.$emit("on-search", store.searchedTerm);
+      this.$emit("on-search", store.searchedTerm); //puoi omettere store.searchedterm xk in store
+      //emit ti serve per aggiornare ogni volta la videata
     },
   },
 };

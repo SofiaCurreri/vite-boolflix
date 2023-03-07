@@ -53,7 +53,9 @@ export default {
 </script>
 
 <template>
-  <AppHeader @on-search="fetchResults" :appTitle="appName" />
+  <header>
+    <AppHeader @on-search="fetchResults" :appTitle="appName" />
+  </header>
 
   <main>
     <CardList />
@@ -61,7 +63,11 @@ export default {
 </template>
 
 <style scoped>
+header {
+  background-color: black !important;
+}
 main {
+  min-height: 90vh;
   background-color: rgb(59, 59, 59);
 }
 </style>

@@ -43,7 +43,7 @@ export default {
     </h4>
     <img :src="getFlag(language)" alt="flag" class="flag my-2" />
     <div>
-      <i class="fa-solid fa-star"></i>
+      <font-awesome-icon icon="fa-solid fa-star" class="solid-star" />
     </div>
   </div>
 </template>
@@ -57,5 +57,9 @@ h3,
 h4,
 p {
   color: white;
+}
+
+.solid-star {
+  color: yellow;
 }
 </style>

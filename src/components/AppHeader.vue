@@ -23,32 +23,26 @@ export default {
 </script>
 
 <template>
-  <header>
-    <nav class="navbar bg-light">
-      <div class="container">
-        <a class="navbar-brand"
-          ><h1>{{ appTitle }}</h1></a
-        >
-        <form class="d-flex" role="search" @submit.prevent="search()">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Type to find a movie or tv series"
-            aria-label="Search"
-            v-model="store.searchedTerm"
-            @keyup.enter="search()"
-          />
-          <button
-            class="btn btn-outline-success"
-            type="button"
-            @click="search()"
-          >
-            Search
-          </button>
-        </form>
-      </div>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand"
+        ><h1 class="text-danger">{{ appTitle }}</h1></a
+      >
+      <form class="d-flex" role="search" @submit.prevent="search()">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Type to find a movie or tv series"
+          aria-label="Search"
+          v-model="store.searchedTerm"
+          @keyup.enter="search()"
+        />
+        <button class="btn btn-outline-success" type="button" @click="search()">
+          Search
+        </button>
+      </form>
+    </div>
+  </nav>
 </template>
 
 <style lang="scss" scoped>

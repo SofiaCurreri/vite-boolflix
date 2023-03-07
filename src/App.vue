@@ -8,6 +8,7 @@ export default {
   data() {
     return {
       appName: "BoolFlix",
+      apiKey: "e13ff19427343a816033a4063dcb0d06",
       store,
     };
   },
@@ -15,15 +16,22 @@ export default {
   components: { AppHeader, CardList },
 
   methods: {
-    fetchMovies(term) {
-      axios.get(store.endpoint + "&query=" + term).then((response) => {
-        store.movies = response.data.results;
-        console.log(store.movies);
-      });
+    fetchMovies(query) {
+      axios
+        .get(`${store.endpoint}/search/movie`, {
+          params: {
+            api_key: this.apiKey,
+            query,
+          },
+        })
+        .then((response) => {
+          store.movies = response.data.results;
+          console.log(store.movies);
+        });
     },
 
-    fetchFilteredMovies(term) {
-      this.fetchMovies(term);
+    fetchFilteredMovies(query) {
+      this.fetchMovies(query);
     },
   },
 };
@@ -35,7 +43,13 @@ export default {
     :appTitle="appName"
   />
 
-  <CardList />
+  <main>
+    <CardList />
+  </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+  background-color: rgb(59, 59, 59);
+}
+</style>

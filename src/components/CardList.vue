@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <div class="container mt-5">
+  <div class="container">
     <div class="row row-cols-3">
       <MovieCard
         v-for="movie in store.movies"

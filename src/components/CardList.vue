@@ -17,6 +17,9 @@ export default {
   <div class="container">
     <div v-if="store.movies.length">
       <h2 class="py-5">Films</h2>
+      <!-- <div>
+        <i class="fa-solid fa-star"></i>
+      </div> -->
       <div class="row row-cols-3">
         <BaseCard
           v-for="movie in store.movies"

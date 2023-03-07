@@ -24,6 +24,12 @@ export default {
     getImg(pic) {
       return "https://image.tmdb.org/t/p/w342" + pic;
     },
+
+    getSolidStars(vote) {
+      vote = Math.round(vote);
+      solidStars = Math.round(vote / 2);
+      return solidStars;
+    },
   },
 };
 </script>
@@ -35,8 +41,10 @@ export default {
     <h4>
       <i>{{ originalTitle }}</i>
     </h4>
-    <img :src="getFlag(language)" alt="flag" class="flag" />
-    <p>{{ vote }}</p>
+    <img :src="getFlag(language)" alt="flag" class="flag my-2" />
+    <div>
+      <i class="fa-solid fa-star"></i>
+    </div>
   </div>
 </template>
 

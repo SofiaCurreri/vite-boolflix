@@ -17,7 +17,7 @@ export default {
   <div class="container mt-5">
     <div class="row row-cols-3">
       <MovieCard
-        v-for="movie in store.movieList"
+        v-for="movie in store.movies"
         :key="movie.id"
         :pic="movie.poster_path"
         :title="movie.title"

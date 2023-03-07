@@ -7,6 +7,10 @@ export default {
     };
   },
 
+  props: {
+    appTitle: String,
+  },
+
   emits: ["on-search"],
 
   methods: {
@@ -20,21 +24,35 @@ export default {
 
 <template>
   <header>
-    <div class="container my-3 d-flex justify-content-end">
-      <input
-        type="text"
-        placeholder="Type to find a movie or tv series"
-        @submit.prevent=""
-        v-model="store.searchedTerm"
-        @keyup.enter="search()"
-      />
-      <button type="button" @click="search()">Search</button>
-    </div>
+    <nav class="navbar bg-light">
+      <div class="container">
+        <a class="navbar-brand"
+          ><h1>{{ appTitle }}</h1></a
+        >
+        <form class="d-flex" role="search" @submit.prevent="search()">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Type to find a movie or tv series"
+            aria-label="Search"
+            v-model="store.searchedTerm"
+            @keyup.enter="search()"
+          />
+          <button
+            class="btn btn-outline-success"
+            type="button"
+            @click="search()"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
   </header>
 </template>
 
 <style lang="scss" scoped>
 input {
-  width: 35%;
+  width: 18rem;
 }
 </style>

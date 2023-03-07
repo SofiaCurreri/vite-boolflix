@@ -7,6 +7,7 @@ import { store } from "./data/store.js";
 export default {
   data() {
     return {
+      appName: "BoolFlix",
       store,
     };
   },
@@ -14,22 +15,25 @@ export default {
   components: { AppHeader, CardList },
 
   methods: {
-    fetchTitles(term) {
+    fetchMovies(term) {
       axios.get(store.endpoint + "&query=" + term).then((response) => {
-        store.movieList = response.data.results;
-        console.log(store.movieList);
+        store.movies = response.data.results;
+        console.log(store.movies);
       });
     },
 
-    fetchFilteredTitles(term) {
-      this.fetchTitles(term);
+    fetchFilteredMovies(term) {
+      this.fetchMovies(term);
     },
   },
 };
 </script>
 
 <template>
-  <AppHeader @on-search="fetchFilteredTitles(store.searchedTerm)" />
+  <AppHeader
+    @on-search="fetchFilteredMovies(store.searchedTerm)"
+    :appTitle="appName"
+  />
 
   <CardList />
 </template>

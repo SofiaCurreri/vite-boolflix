@@ -30,18 +30,30 @@ export default {
         });
     },
 
-    fetchFilteredMovies(query) {
+    fetchTvSeries(query) {
+      axios
+        .get(`${store.endpoint}/search/tv`, {
+          params: {
+            api_key: this.apiKey,
+            query,
+          },
+        })
+        .then((response) => {
+          store.tvSeries = response.data.results;
+          console.log(store.tvSeries);
+        });
+    },
+
+    fetchResults(query) {
       this.fetchMovies(query);
+      this.fetchTvSeries(query);
     },
   },
 };
 </script>
 
 <template>
-  <AppHeader
-    @on-search="fetchFilteredMovies(store.searchedTerm)"
-    :appTitle="appName"
-  />
+  <AppHeader @on-search="fetchResults" :appTitle="appName" />
 
   <main>
     <CardList />

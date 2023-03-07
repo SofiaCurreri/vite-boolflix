@@ -20,24 +20,28 @@ export default {
       //gestisco il resto
       return "http://flagsapi.com/" + country + "/flat/64.png";
     },
+
+    getImg(pic) {
+      return "https://image.tmdb.org/t/p/w342" + pic;
+    },
   },
 };
 </script>
 
 <template>
   <div class="col text-center">
-    <img :src="pic" class="img-fluid" alt="title pic" />
+    <img :src="getImg(pic)" alt="movie/tvSeries poster" />
     <h3 class="mt-3">{{ title }}</h3>
     <h4>
       <i>{{ originalTitle }}</i>
     </h4>
-    <img :src="getFlag(language)" alt="" />
+    <img :src="getFlag(language)" alt="flag" class="flag" />
     <p>{{ vote }}</p>
   </div>
 </template>
 
 <style lang="scss" scoped>
-img {
+.flag {
   width: 7%;
 }
 

@@ -16,7 +16,7 @@ export default {
 <template>
   <div class="container">
     <div v-if="store.movies.length">
-      <h2>Films</h2>
+      <h2 class="py-5">Films</h2>
       <div class="row row-cols-3">
         <BaseCard
           v-for="movie in store.movies"
@@ -26,12 +26,13 @@ export default {
           :originalTitle="movie.original_title"
           :language="movie.original_language"
           :vote="movie.vote_average"
+          class="mb-5"
         />
       </div>
     </div>
 
     <div v-if="store.tvSeries.length" class="mt-5">
-      <h2>Tv Series</h2>
+      <h2 class="my-5">Tv Series</h2>
       <div class="row row-cols-3">
         <BaseCard
           v-for="singleSeries in store.tvSeries"
@@ -41,6 +42,7 @@ export default {
           :originalTitle="singleSeries.original_name"
           :language="singleSeries.original_language"
           :vote="singleSeries.vote_average"
+          class="mb-5"
         />
       </div>
     </div>

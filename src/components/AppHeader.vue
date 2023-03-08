@@ -37,7 +37,7 @@ export default {
           v-model="store.searchedTerm"
           @keyup.enter="search()"
         />
-        <button class="btn btn-outline-success" type="button" @click="search()">
+        <button class="btn btn-danger" type="button" @click="search()">
           Search
         </button>
       </form>

@@ -7,7 +7,7 @@ import { store } from "./data/store.js";
 export default {
   data() {
     return {
-      appName: "BoolFlix",
+      appName: "BOOLFLIX",
       apiKey: "e13ff19427343a816033a4063dcb0d06",
       store,
     };
@@ -62,12 +62,14 @@ export default {
   </main>
 </template>
 
-<style scoped>
+<style lang="scss">
 header {
-  background-color: black !important;
+  background-color: #1a1919 !important;
 }
 main {
   min-height: 90vh;
   background-color: rgb(59, 59, 59);
+  color: white;
+  padding-bottom: 2rem;
 }
 </style>

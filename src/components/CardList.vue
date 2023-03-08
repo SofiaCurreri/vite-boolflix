@@ -39,6 +39,7 @@ export default {
           :pic="singleSeries.poster_path"
           :title="singleSeries.name"
           :originalTitle="singleSeries.original_name"
+          :overview="singleSeries.overview"
           :language="singleSeries.original_language"
           :rating="Math.ceil(singleSeries.vote_average / 2)"
         />

@@ -67,7 +67,7 @@ export default {
 
 .card {
   height: 40vw;
-  border-width: 0 !important;
+  border-width: 0;
   .card-front {
     height: 100%;
     overflow: hidden;
